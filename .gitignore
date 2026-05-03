@@ -1,0 +1,74 @@
+# Core build output
+target/
+build/
+out/
+bin/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# Maven wrapper binary cache
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE files
+.idea/
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+.springBeans
+.sts4-cache
+.apt_generated/
+*.iws
+*.iml
+*.ipr
+
+# NetBeans
+nbproject/private/
+nbbuild/
+nbdist/
+.nb-gradle/
+dist/
+
+# OS and local temp files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.temp
+~$*
+
+# Local runtime artifacts
+*.pid
+*.seed
+*.out
+*.err
+logs/
+
+# Environment and secret config
+.env
+.env.*
+!.env.example
+src/main/resources/application.properties
+src/main/resources/application.yaml
+src/main/resources/application.yml
+src/main/resources/application-local.properties
+src/main/resources/application-local.yaml
+src/main/resources/application-local.yml
+src/main/resources/application-secret.properties
+src/main/resources/application-secret.yaml
+src/main/resources/application-secret.yml
+src/main/java/com/enterprise/streaming/platform/hyperstream/config/SecurityConfig.java
+
+# Local infrastructure and generated folders
+edge_profile/
+ppt_assets/
+ppt_slide_exports/
+tmp_hyperstream_ppt/
+
+# Local documents and exports that are not part of app source
+*.pptx
+HELP.md

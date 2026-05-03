@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyperStream Movies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-page="movies">
+<div class="page-shell page-shell-inner">
+    <nav class="site-nav compact-nav">
+        <a class="brand-link" href="/">HyperStream</a>
+        <div class="nav-links">
+            <a href="/" data-nav="home">Home</a>
+            <a href="/movies.html" data-nav="movies">Movies</a>
+            <a href="/users.html" data-nav="users">Users</a>
+            <a href="/subscriptions.html" data-nav="subscriptions">Plans</a>
+            <a href="/watchlist.html" data-nav="watchlist">Watchlist</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="section-header">
+            <div>
+                <p class="eyebrow">Movies Route</p>
+                <h2>Catalog CRUD</h2>
+            </div>
+            <div class="header-metric">Total <strong id="movie-page-count">0</strong></div>
+        </section>
+        <div id="status-banner" class="status-banner">Loading movies...</div>
+        <section class="panel-layout">
+            <aside class="form-panel">
+                <div class="panel-title-row"><h3>Movie Form</h3><button class="ghost-btn small" type="button" id="reset-movie-form">New</button></div>
+                <form id="movie-form" class="stack-form">
+                    <input type="hidden" id="movie-id">
+                    <label><span>Title</span><input id="movie-title" type="text" required></label>
+                    <label><span>Description</span><textarea id="movie-description" rows="4" required></textarea></label>
+                    <label><span>Genre</span><input id="movie-genre" type="text" required></label>
+                    <div class="form-grid">
+                        <label><span>Release Year</span><input id="movie-release-year" type="number" min="1900" required></label>
+                        <label><span>Duration</span><input id="movie-duration" type="number" min="1" required></label>
+                    </div>
+                    <label><span>Rating</span><input id="movie-rating" type="number" min="0" max="10" step="0.1" required></label>
+                    <button class="primary-btn form-submit" type="submit">Save Movie</button>
+                </form>
+            </aside>
+            <div class="content-panel">
+                <div class="toolbar">
+                    <input type="search" id="movie-search" placeholder="Search movies by title or genre">
+                    <select id="movie-page-size" class="page-size-select">
+                        <option value="30">30 per page</option>
+                        <option value="50">50 per page</option>
+                        <option value="100">100 per page</option>
+                    </select>
+                </div>
+                <div id="movies-grid" class="card-grid"></div>
+                <div id="movies-pagination"></div>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>

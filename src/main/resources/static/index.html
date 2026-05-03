@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyperStream Netflix Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-page="home">
+<div class="page-shell">
+    <header class="hero hero-home">
+        <nav class="site-nav">
+            <a class="brand-link" href="/">HyperStream</a>
+            <div class="nav-links">
+                <a href="/" data-nav="home">Home</a>
+                <a href="/movies.html" data-nav="movies">Movies</a>
+                <a href="/users.html" data-nav="users">Users</a>
+                <a href="/subscriptions.html" data-nav="subscriptions">Plans</a>
+                <a href="/watchlist.html" data-nav="watchlist">Watchlist</a>
+            </div>
+        </nav>
+
+        <section class="hero-content">
+            <div class="hero-copy">
+                <p class="eyebrow">Netflix Theme Control Center</p>
+                <h1>One streaming app. Multiple pages. Same backend APIs.</h1>
+                <p class="hero-text">Browse the admin experience like a real product with separate routes for catalog, users, plans, and watchlists. Your backend remains unchanged.</p>
+                <div class="hero-buttons">
+                    <a class="primary-btn nav-button" href="/movies.html">Open Movies</a>
+                    <button class="secondary-btn" type="button" id="refresh-all">Refresh Dashboard</button>
+                </div>
+            </div>
+            <div class="hero-feature-card">
+                <div class="hero-feature-copy">
+                    <span class="chip">Live Backend</span>
+                    <h2>Cinematic routing experience</h2>
+                    <p>Dedicated pages, Netflix-style rows, red-white theme, and the same CRUD integration you already verified on the backend.</p>
+                </div>
+                <div class="hero-feature-poster"></div>
+            </div>
+        </section>
+
+        <section class="stats-grid">
+            <article class="stat-card"><span class="stat-label">Movies</span><strong class="stat-value" id="movie-count">0</strong><span class="stat-subtext">Titles in catalog</span></article>
+            <article class="stat-card"><span class="stat-label">Users</span><strong class="stat-value" id="user-count">0</strong><span class="stat-subtext">Registered viewers</span></article>
+            <article class="stat-card"><span class="stat-label">Plans</span><strong class="stat-value" id="subscription-count">0</strong><span class="stat-subtext">Subscription options</span></article>
+            <article class="stat-card"><span class="stat-label">Watchlist</span><strong class="stat-value" id="watchlist-count">0</strong><span class="stat-subtext">First user queue</span></article>
+        </section>
+    </header>
+
+    <main class="main-content">
+        <section class="section-header">
+            <div>
+                <p class="eyebrow">Home Dashboard</p>
+                <h2>Streaming overview</h2>
+            </div>
+            <div id="status-banner" class="status-banner">Loading dashboard data...</div>
+        </section>
+
+        <section class="quick-highlights">
+            <article class="highlight-panel"><h3>Trending Genres</h3><div id="genre-pills" class="pill-row"></div></article>
+            <article class="highlight-panel"><h3>Plan Snapshot</h3><div id="plan-pills" class="pill-row"></div></article>
+        </section>
+
+        <section class="content-section">
+            <div class="row-header"><h3>Featured Catalog</h3><a href="/movies.html">Manage movies</a></div>
+            <div id="featured-row" class="card-grid"></div>
+        </section>
+
+        <section class="content-section">
+            <div class="row-header"><h3>Viewer Profiles</h3><a href="/users.html">Manage users</a></div>
+            <div id="user-row" class="list-grid"></div>
+        </section>
+
+        <section class="content-section">
+            <div class="row-header"><h3>Subscription Plans</h3><a href="/subscriptions.html">Manage plans</a></div>
+            <div id="plan-row" class="pricing-grid"></div>
+        </section>
+    </main>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>

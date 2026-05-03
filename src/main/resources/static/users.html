@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyperStream Users</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-page="users">
+<div class="page-shell page-shell-inner">
+    <nav class="site-nav compact-nav">
+        <a class="brand-link" href="/">HyperStream</a>
+        <div class="nav-links">
+            <a href="/" data-nav="home">Home</a>
+            <a href="/movies.html" data-nav="movies">Movies</a>
+            <a href="/users.html" data-nav="users">Users</a>
+            <a href="/subscriptions.html" data-nav="subscriptions">Plans</a>
+            <a href="/watchlist.html" data-nav="watchlist">Watchlist</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="section-header">
+            <div>
+                <p class="eyebrow">Users Route</p>
+                <h2>Viewer CRUD</h2>
+            </div>
+            <div class="header-metric">Total <strong id="user-page-count">0</strong></div>
+        </section>
+        <div id="status-banner" class="status-banner">Loading users...</div>
+        <section class="panel-layout">
+            <aside class="form-panel">
+                <div class="panel-title-row"><h3>User Form</h3><button class="ghost-btn small" type="button" id="reset-user-form">New</button></div>
+                <form id="user-form" class="stack-form">
+                    <input type="hidden" id="user-id">
+                    <label><span>Name</span><input id="user-name" type="text" required></label>
+                    <label><span>Email</span><input id="user-email" type="email" required></label>
+                    <label><span>Subscription Type</span>
+                        <select id="user-subscription-type" required>
+                            <option value="BASIC">BASIC</option>
+                            <option value="STANDARD">STANDARD</option>
+                            <option value="PREMIUM">PREMIUM</option>
+                        </select>
+                    </label>
+                    <button class="primary-btn form-submit" type="submit">Save User</button>
+                </form>
+            </aside>
+            <div class="content-panel">
+                <div class="toolbar">
+                    <input type="search" id="user-search" placeholder="Search users by name or email">
+                    <select id="user-page-size" class="page-size-select">
+                        <option value="30">30 per page</option>
+                        <option value="50">50 per page</option>
+                        <option value="100">100 per page</option>
+                    </select>
+                </div>
+                <div id="users-grid" class="list-grid"></div>
+                <div id="users-pagination"></div>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>
